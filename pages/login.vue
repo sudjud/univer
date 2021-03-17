@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import firebase from 'firebase/app'
-import 'firebase/auth'
 export default {
   data() {
     return {
@@ -47,8 +45,11 @@ export default {
         email: this.loginForm.email,
         pass: this.loginForm.pass
       }
-      await this.$fire.auth.signInWithEmailAndPassword(this.loginForm.email, this.loginForm.pass)
-      this.$router.push('/')
+      try {
+        await this.$store.dispatch('login', formData)    
+        this.$router.push('/')
+      } catch (e) {}
+      
     }
   }
 }

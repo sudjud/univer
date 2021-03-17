@@ -6,9 +6,9 @@ import 'firebase/database'
 export const actions = {
   async login({commit, dispatch}, {email, pass}){
     try {
-      await this.$fire.auth().signInWithEmailAndPassword(email, pass)
+      await this.$fire.auth.signInWithEmailAndPassword(email, pass)
+      .then(() => commit('setToken', 'true'))
     } catch (e) {
-      console.log(e)
       throw e
     }
   },

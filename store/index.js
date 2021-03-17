@@ -12,9 +12,9 @@ export const actions = {
       throw e
     }
   },
-  logout({commit}){
+  async logout({commit}){
+    await this.$fire.auth.signOut()
     commit('clearToken')
-    window.location.href = "/";
   },
   async nuxtServerInit({dispatch}){
     await dispatch('users/fetchUsers')

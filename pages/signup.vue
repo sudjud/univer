@@ -6,7 +6,7 @@
         <el-input
           type="text"
           v-model="ruleForm.login"
-          autocomplete="off"
+          autocomplete="on"
           placeholder="Email"
         ></el-input>
       </el-form-item>
@@ -15,6 +15,14 @@
           type="password"
           v-model="ruleForm.pass"
           placeholder="Password"
+          autocomplete="off"
+        ></el-input>
+      </el-form-item>
+      <el-form-item prop="name">
+        <el-input
+          type="text"
+          v-model="ruleForm.name"
+          placeholder="Your name"
           autocomplete="off"
         ></el-input>
       </el-form-item>
@@ -48,6 +56,7 @@ export default {
       ruleForm: {
         login: "",
         pass: "",
+        name: ""
       },
       rules: {
         pass: [{ validator: validatePass, trigger: "blur" }],
@@ -57,9 +66,13 @@ export default {
   },
   methods: {
     async signUpUser(){
+      const formData = {
+        email: this.ruleForm.login,
+        password: this.ruleForm.pass,
+        name: this.ruleForm.name
+      }
       try {
-        await this.$fire.auth.createUserWithEmailAndPassword(this.ruleForm.login, this.ruleForm.pass)
-        this.$router.push('/login')
+        await this.$store.dispatch('register/regUser', formData)
       } catch (e) {
         throw e
       }

@@ -21,9 +21,10 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit()">Login</el-button>
+        <nuxt-link to='/'>Go to home</nuxt-link>
       </el-form-item>
     </el-form>
-    <nuxt-link to='/'>Go to home</nuxt-link>
+    
   </div>
   </div>
 </template>
@@ -46,8 +47,7 @@ export default {
         pass: this.loginForm.pass
       }
       try {
-        await this.$store.dispatch('login', formData)    
-        this.$router.push('/')
+        await this.$store.dispatch('login', formData)
       } catch (e) {}
       
     }

@@ -3,13 +3,15 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 
+
+
 export const actions = {
   async login({commit, dispatch}, {email, pass}){
     try {
       await this.$fire.auth.signInWithEmailAndPassword(email, pass)
       .then(() => commit('setToken', 'true'))
     } catch (e) {
-      throw e
+      commit('throwErr', e)
     }
   },
   async logout({commit}){
@@ -22,7 +24,8 @@ export const actions = {
 }
 
 export const state = () => ({
-  token: null
+  token: null,
+  error : null
 })
 
 export const mutations = {
@@ -31,12 +34,19 @@ export const mutations = {
   },
   clearToken(state){
     state.token = null 
+  },
+  throwErr(state, error){
+    state.error = error
+  },
+  clearErr(state){
+    state.error = null
   }
 }
 
 export const getters = {
   isAuth: state => !!state.token,
-  isNotAuth: state => !state.token
+  isNotAuth: state => !state.token,
+  error: s => s.error
 }
 
 

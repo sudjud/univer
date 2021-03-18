@@ -25,15 +25,19 @@ export default {
     }]
   },
 
+  ssr: true, 
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/static/css/global.css',
     '@/node_modules/bootstrap/dist/css/bootstrap.min.css',
     'element-ui/lib/theme-chalk/index.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    { src: '~/plugins/materialize.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

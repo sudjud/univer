@@ -28,6 +28,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="signUpUser()">Submit</el-button>
+        <nuxt-link to='/'>Go to home</nuxt-link>
       </el-form-item>
     </el-form>
   </div>
@@ -35,6 +36,7 @@
 
 <script>
 export default {
+  layout: 'empty',
   data() {
     var validatePass = (rule, value, callback) => {
       if (value === "") {
@@ -73,9 +75,7 @@ export default {
       }
       try {
         await this.$store.dispatch('register/regUser', formData)
-      } catch (e) {
-        throw e
-      }
+      } catch (e) {}
     }
   },
 };

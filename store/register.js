@@ -12,7 +12,7 @@ export const actions = {
       })
       this.$router.push('/login')
     } catch (e) {
-      throw e
+      this.commit('throwErr', e)
     }
     
   },

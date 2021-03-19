@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-container>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Test</a>
        <div class="collapse navbar-collapse">
@@ -25,7 +25,7 @@
         </ul>
       </div>
     </nav>
-  </div>
+  </el-container>
 </template>
 
 <script>
@@ -47,3 +47,10 @@ export default {
 
 }
 </script>
+
+<style lang="sass" scoped>
+
+  nav
+    width: 100%
+
+</style>

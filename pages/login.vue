@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <div class="container">
+  <el-container>
       <el-form :model="loginForm">
       <el-form-item prop="text">
         <h1>Login</h1>
@@ -25,8 +24,7 @@
       </el-form-item>
     </el-form>
     
-  </div>
-  </div>
+  </el-container>
 </template>
 
 <script>
@@ -58,6 +56,8 @@ export default {
 <style lang="sass" scoped>
   form
     width: 600px
+  .el-container
+    margin-top: 100px
 
 </style>
 

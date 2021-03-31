@@ -8,14 +8,20 @@
 </template>
 
 <style>
-
 </style>
 
 
 <script>
-import navbar from '@/components/navbar'
+import navbar from "@/components/navbar";
 
 export default {
-    navbar
-}
+  components: {
+    navbar,
+  },
+  async mounted(){
+    if (!Object.keys(this.$store.getters.info).length) {
+      await this.$store.dispatch('fetchInfo')
+    }
+  }
+};
 </script>

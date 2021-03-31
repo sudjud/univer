@@ -23,7 +23,7 @@
             <a class="nav-link" @click.prevent="logout" href="#">Выйти</a>
           </li>
         </ul>
-        <div class="">Здравствуйте</div>
+        <div class=""></div>
       </div>
     </nav>
   </el-container>

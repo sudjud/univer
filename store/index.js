@@ -10,6 +10,7 @@ export const actions = {
     try {
       await this.$fire.auth.signInWithEmailAndPassword(email, pass)
       .then(() => commit('setToken', 'true'))
+      this.$router.push('/')
     } catch (e) {
       commit('throwErr', e)
     }

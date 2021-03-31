@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <h1>Home page</h1>
+      <h1>Домашнаяя страница</h1><br>
+      <p>Этот сайт создан в учебных целях</p>
     </div>
   </div>
 </template>

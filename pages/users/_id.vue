@@ -3,7 +3,7 @@
     <h1>{{user.name}}</h1>
     <hr/>
     <b>{{user.email}}</b>
-    <nuxt-link class="goback_link" to="./">Go back</nuxt-link>
+    <nuxt-link class="goback_link" to="./">Назад</nuxt-link>
   </div>
 </template>
 

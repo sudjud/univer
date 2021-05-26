@@ -2,7 +2,7 @@
   <el-container>
       <el-form :model="loginForm">
       <el-form-item prop="text">
-        <h1>Login</h1>
+        <h1>Войти или <nuxt-link class="goToSignUp" to='/signup'>Зарегаться</nuxt-link></h1>
         <el-input
           type="email"
           v-model="loginForm.email"
@@ -19,8 +19,9 @@
         ></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="onSubmit()">Login</el-button>
-        <nuxt-link to='/'>Go to home</nuxt-link>
+        <el-button type="primary" @click="onSubmit()">Войти</el-button>
+        <nuxt-link to='/'>Вернуться на главную</nuxt-link>
+        
       </el-form-item>
     </el-form>
     

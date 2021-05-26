@@ -17,13 +17,15 @@ export const mutations = {
 export const actions = {
     async fetchInfo({dispatch, commit}) {
       try {
-        const uid = await dispatch('register/getUid')
+        const uid = await dispatch('getUid')
         const info = (await firebase.database().ref(`/users/${uid}/info`).once('value')).val()
         commit('setInfo', info)
       } catch (e) {
-
       }
-
+    },
+    getUid(){
+      const user = firebase.auth().currentUser
+      return user ? user.uid : null 
     }
   }
 

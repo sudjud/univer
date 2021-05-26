@@ -1,4 +1,3 @@
-
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
@@ -16,7 +15,7 @@ export const actions = {
   async logout({commit}){
     await this.$fire.auth.signOut()
     commit('clearToken')
-    commit('clearInfo')
+    commit('info/clearInfo')
   },
   async nuxtServerInit({dispatch}){
     await dispatch('users/fetchUsers')

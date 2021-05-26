@@ -2,7 +2,7 @@
   <el-container>
       <el-form :model="ruleForm" :rules="rules" status-icon>
         <el-form-item prop="login">
-          <h1>Sign Up</h1>
+          <h1>Регистрация</h1>
           <el-input
             type="text"
             v-model="ruleForm.login"
@@ -27,8 +27,8 @@
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="signUpUser()">Submit</el-button>
-          <nuxt-link to="/">Go to home</nuxt-link>
+          <el-button type="primary" @click="signUpUser()">Готово!</el-button>
+          <nuxt-link to="/">На главную</nuxt-link>
         </el-form-item>
       </el-form>
   </el-container>

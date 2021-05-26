@@ -19,9 +19,10 @@ export default {
     navbar,
   },
   async mounted(){
-    if (!Object.keys(this.$store.getters.info).length) {
-      await this.$store.dispatch('fetchInfo')
-    }
+    await this.$store.dispatch('info/fetchInfo')
+  },
+  async isAdmin(){
+    await this.$store.dispatch('fb/getEmail')
   }
 };
 </script>
